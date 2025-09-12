@@ -1,0 +1,6 @@
+# Ignore artifacts:
+build
+coverage
+.eslintrc.js
+.prettierignore
+README.md
