@@ -1,4 +1,7 @@
-# dev
+node_modules
+drizzle
+dist
+github
 .yarn/
 !.yarn/releases
 .vscode/*
@@ -7,13 +10,6 @@
 .idea/workspace.xml
 .idea/usage.statistics.xml
 .idea/shelf
-
-# deps
-node_modules/
-
-# env
-.env
-.env.production
 
 # logs
 logs/
@@ -24,11 +20,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# misc
-.DS_Store
-
-# only yarn
-package-lock.json
-
-# no dist
-dist/
+# frufru
+eslint.config.js
+lefthook.yml
+.prettierignore
+.prettierrc
+.gitignore
+README.md
+drizzle.config.ts

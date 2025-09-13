@@ -15,14 +15,17 @@
     "lint": "eslint . --ext .ts,.js,.cjs,.mjs --ignore-pattern 'eslint.config.js'",
     "lint:fix": "eslint . --ext .ts,.js,.cjs,.mjs --fix --ignore-pattern 'eslint.config.js'",
     "format": "prettier --write .",
-    "start:lefthook": "lefthook install"
+    "start:lefthook": "lefthook install",
+    "migration:generate": "drizzle-kit generate",
+    "migration:run": "drizzle-kit migrate"
   },
   "dependencies": {
     "@hono/node-server": "^1.19.0",
     "dotenv": "^17.2.2",
     "drizzle-orm": "^0.44.5",
     "hono": "^4.9.6",
-    "pg": "^8.16.3"
+    "pg": "^8.16.3",
+    "ulid": "^3.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
