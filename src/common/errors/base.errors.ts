@@ -1,3 +1,4 @@
+import type { ZodError } from 'zod';
 import {
   HttpCode,
   HttpError,
@@ -32,12 +33,14 @@ export class ConfigError extends InternalError {
 export class UnknowInternalError extends InternalError {
   constructor(
     message = 'An unexpected error occurred',
+    validationErrors?: ZodError, // Pay attention to the current zod version being used, for v3 is this 'typeToFlattenedError'
     serviceFailure?: ServiceFailureError,
   ) {
     super({
       httpCode: HttpCode.INTERNAL_SERVER_ERROR,
       message,
       code: 'UNKNOW_INTERNAL_ERROR',
+      validationErrors,
       serviceFailure,
     });
   }
