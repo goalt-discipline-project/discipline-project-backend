@@ -1,16 +1,13 @@
 import { Hono } from 'hono';
 import { getDbConnection } from '../config/database.config.ts';
-import { validateCreateDBParam } from './fizz-buzz.middleware.ts';
 import { fizzBuzzTable } from './fizz-buzz.table.ts';
 
 const app = new Hono();
 
-app.get('/', validateCreateDBParam, async (c) => {
+app.get('/:createDb?', async (c) => {
   const dbConnection = getDbConnection();
 
-  const param = c.get('validatedParams');
-
-  if (param.create_db) {
+  if (c.req.param(`createDb`)) {
     const [created] = await dbConnection
       .insert(fizzBuzzTable)
       .values({

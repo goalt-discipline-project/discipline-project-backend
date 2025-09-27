@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/node-postgres';
-import * as configService from '../config/config.service.ts';
+import { databaseConfig } from './config.js';
 
 export function getDbConnection() {
-  const db = drizzle(configService.getDatabaseUrl());
+  const db = drizzle(databaseConfig.connectionString);
   return db;
 }

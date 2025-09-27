@@ -62,7 +62,7 @@ export default [
         },
       ],
 
-      'import-x/consistent-type-specifier-style': 'off',
+      'import-x/consistent-type-specifier-style': ['error', 'prefer-top-level'],
       'import-x/order': [
         'error',
         {
@@ -113,7 +113,6 @@ export default [
       '@typescript-eslint/no-var-requires': 'off',
       '@typescript-eslint/restrict-template-expressions': 'off',
       '@typescript-eslint/no-unnecessary-template-expression': 'off',
-      'n/no-extraneous-import': 'off',
 
       'prettier/prettier': 'error',
     },
