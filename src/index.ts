@@ -24,7 +24,6 @@ app.onError((err, c) => {
     const errorMessage = err instanceof Error ? err.message : 'Not details';
     const defaultError = new UnknowInternalError(
       undefined,
-      undefined,
       ErroHandler.handleServiceFailure('internal', {
         message: errorMessage,
       }),
