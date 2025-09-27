@@ -8,6 +8,6 @@ export default defineConfig({
   out: './drizzle',
   schema: ['./src/fizz-buzz/fizz-buzz.table.ts'],
   dbCredentials: {
-    url: process.env.DATABASE_URL ?? '',
+    url: process.env['DATABASE_URL'] ?? '',
   },
 });
