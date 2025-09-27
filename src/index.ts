@@ -1,14 +1,11 @@
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
-import FizzBuzzRouter from './fizz-buzz/fizz-buzz.router.ts';
 
-const app = new Hono().basePath('/api');
+const app = new Hono();
 
 app.get('/', (c) => {
   return c.text('Hello Hono!');
 });
-
-app.route('/fizz-buzz', FizzBuzzRouter);
 
 serve(
   {

@@ -28,7 +28,5 @@ lerna-debug.log*
 .DS_Store
 
 # only yarn
-package-lock.json
 
-# no dist
-dist/
+package-lock.json
