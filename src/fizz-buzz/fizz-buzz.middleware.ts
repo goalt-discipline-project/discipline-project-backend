@@ -24,10 +24,9 @@ export const validateCreateDBParam: MiddlewareHandler<{
 
     if (!parsed.success) {
       console.error('Validation failed:', z.flattenError(parsed.error));
-      throw new InvalidRequestParameterError(
-        undefined,
-        z.flattenError(parsed.error),
-      );
+      throw new InvalidRequestParameterError<
+        z.infer<typeof createDatabaseSchema>
+      >(undefined, z.flattenError(parsed.error));
     }
 
     c.set('validatedParams', parsed.data);
@@ -39,6 +38,8 @@ export const validateCreateDBParam: MiddlewareHandler<{
       throw error;
     }
 
-    throw new InvalidRequestParameterError();
+    throw new InvalidRequestParameterError<
+      z.infer<typeof createDatabaseSchema>
+    >();
   }
 };
