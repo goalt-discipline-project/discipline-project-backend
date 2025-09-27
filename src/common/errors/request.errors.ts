@@ -1,3 +1,4 @@
+import type { ZodError } from 'zod';
 import type { $ZodFlattenedError } from 'zod/v4/core';
 import { HttpCode, HttpError, type HttpErrorArgs } from './app.errors.ts';
 
@@ -11,10 +12,10 @@ export class RequestError extends HttpError {
   }
 }
 
-export class InvalidRequestParameterError<T> extends RequestError {
+export class InvalidRequestParameterError extends RequestError {
   constructor(
     message = 'One or multiple invalid request parameters were provided',
-    validationErrors?: $ZodFlattenedError<T>,
+    validationErrors?: $ZodFlattenedError,
   ) {
     super({
       httpCode: HttpCode.BAD_REQUEST,
