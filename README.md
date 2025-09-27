@@ -39,12 +39,6 @@ psql postgresql://admin:admin123@localhost:5431/meubanco
 SELECT * FROM users;
 ```
 
-### For future use you can just run this
-
-```bash
-sudo docker start meu-postgres
-```
-
 ## Tech Stack
 
 - **Runtime**: NodeJs V24
